@@ -21,6 +21,9 @@ export default function SignUpForm() {
 
   console.log(formFields)
 
+  const resetForm = () => {
+    setFormFields(formFieldsModel);
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target;
