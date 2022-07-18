@@ -5,6 +5,8 @@ import {
   createUserDocFromAuth
 } from '../../utils/firebase/firebase'
 
+import FormInput from '../form-input/form-input-component';
+
 
 const formFieldsModel = {
   displayName: '',
@@ -45,6 +47,7 @@ export default function SignUpForm() {
         displayName
       );
       await createUserDocFromAuth(response, {displayName})
+      resetForm()
     } catch (error) {
       console.log(
         "user creation error", error
@@ -57,14 +60,25 @@ export default function SignUpForm() {
     <div>
       <h1>Sign up with Email and Password</h1>
       <form onSubmit={handleSubmit} >
-        <label>Display Name</label>
-        <input 
+
+        <FormInput 
+          label="Display Name"
           type="text" 
           required
           onChange={handleChange}
           name='displayName'
           value={displayName}
         />
+
+
+        {/* <label>Display Name</label>
+        <input 
+          type="text" 
+          required
+          onChange={handleChange}
+          name='displayName'
+          value={displayName}
+        /> */}
 
         <label>Email</label>
         <input 
