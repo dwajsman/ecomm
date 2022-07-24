@@ -80,8 +80,9 @@ export default function SignUpForm() {
           value={displayName}
         /> */}
 
-        <label>Email</label>
-        <input 
+        {/* <label>Email</label> */}
+        <FormInput 
+          label="Email"
           type="email" 
           required
           name='email'
@@ -89,8 +90,9 @@ export default function SignUpForm() {
           value={email}
         />
 
-        <label>Password</label>
-        <input 
+        {/* <label>Password</label> */}
+        <FormInput 
+          label="Password"
           type="password" 
           required
           name='password'
@@ -98,8 +100,9 @@ export default function SignUpForm() {
           value={password} 
         />
 
-        <label>Confirm Password</label>
-        <input 
+        {/* <label>Confirm Password</label> */}
+        <FormInput 
+          label="Confirm Password"
           type="password" 
           required
           name='passwordConfirm'
