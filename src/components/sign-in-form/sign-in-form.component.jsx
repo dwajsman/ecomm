@@ -39,8 +39,19 @@ export default function SignInForm() {
       const {user} = await authWithEmailAndPassword(email, password);
       console.log("1st response >> ",user);
       resetForm();
-    } catch (error) {
-      console.log("user log-in error", error);
+    } catch (e) {
+      switch (e.code) {
+        case 'auth/wrong-password':
+          alert("Wrong password. Please try again.")
+          break;
+        case 'auth/user-not-found':
+          alert("No user associated with this email")
+          break;
+        default:
+          console.log("user log-in error", e);
+          break;
+      }
+      
     }
 
 
