@@ -9,8 +9,9 @@ import {
 } from '../../utils/firebase/firebase'
 
 import SignUpForm from '../../components/sign-up-form/sign-up-form.component'
+import SignInForm from '../../components/sign-in-form/sign-in-form.component'
 
-export default function SignIn() {
+export default function Authentication() {
 
   useEffect( () => {
     async function f() {
@@ -38,13 +39,24 @@ export default function SignIn() {
   return (
     <div>
       <h1>sign-in page</h1>
-      <button onClick={logGoogleUser}>
+      {/* <button onClick={logGoogleUser}>
         Login with Google Pop up
-      </button>      
-      <button onClick={signInWithGoogleRedirect}>
+      </button>       */}
+      {/* <button onClick={signInWithGoogleRedirect}>
         Login with Google Redirect
-      </button>
+      </button> */}
+      
+
+      <div>
+      <SignInForm />
+      </div>
+      
+
+      <div>
       <SignUpForm />
+      </div>
+      
+ 
     </div>
   )
 }
