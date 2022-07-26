@@ -50,11 +50,8 @@ export default function SignInForm() {
         default:
           console.log("user log-in error", e);
           break;
-      }
-      
+      } 
     }
-
-
   }
 
 
@@ -89,7 +86,7 @@ export default function SignInForm() {
         />
         <div className='buttons-container'>
           <Button type="submit" children="Sign In" />
-          <Button buttonType='google' onClick={logGoogleUser} children="Google Login" />
+          <Button type='button' buttonType='google' onClick={logGoogleUser} children="Google Login" />
         </div>
 
       </form>
