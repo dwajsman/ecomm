@@ -1,9 +1,9 @@
 import React from 'react'
 import {useContext} from 'react'
-// import SHOP_DATA from '../../shop-data.json';
-
+import ProductCard from '../../components/product-card/product-card.component';
 import { ProductsContext } from '../../context/products.context';
 
+import './shop.styles.scss'
 
 
 export default function Shop() {
@@ -12,17 +12,14 @@ export default function Shop() {
   console.log('SHOP SHOW ==', products);
 
   return (
-    <div>
-      <p>My shop</p>
+    <div className='products-container'>
       
       {
         products ? (
           products.map(
-            ({id, name}) => {
+            (product) => {
               return(
-                <div key={id}>
-                  <h1>{name}</h1>
-                </div>
+                  <ProductCard product={product} key={product.id}/>
               )
           }
         )) : (<p> no product </p>) 
