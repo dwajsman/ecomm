@@ -1,3 +1,5 @@
+import {useContext} from 'react'
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -9,7 +11,9 @@ import {
   signInWithPopup,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
-  createUserWithEmailAndPassword
+  createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from 'firebase/auth';
 
 import {
@@ -18,6 +22,8 @@ import {
   getDoc,
   setDoc
 } from 'firebase/firestore'
+
+import { UserContext } from '../../context/user.context'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -58,8 +64,20 @@ export const authWithEmailAndPassword = async (email, password) => {
 
 };
 
-
  
+// const { setCurrentUser } = useContext(UserContext);
+
+export const signOutUser = async() => {
+  await signOut(auth);
+  // setCurrentUser(auth);
+}
+ 
+
+export const onAuthStateChangedListener = (callback) => {
+  onAuthStateChanged(auth, callback);
+}
+
+
 
 export const createUserDocFromAuth = async (userAuth, additionalInfo) => {
   if(!userAuth) return; 
