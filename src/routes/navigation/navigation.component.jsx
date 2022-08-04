@@ -14,7 +14,7 @@ import CartDropdown from '../../components/cart-dropdown/cart-dropdown';
 export default function Navigation() {
 
   const { currentUser } = useContext(UserContext);
-  const { isOpen, toggleCart } = useContext(CartContext);
+  const { isOpen } = useContext(CartContext);
 
 
   console.log("USER - NAV -> ", currentUser);
@@ -46,7 +46,7 @@ export default function Navigation() {
 
         <CartIcon />
       </div>
-      <CartDropdown />
+      { isOpen && <CartDropdown /> }
     </div>
       <Outlet />
       </div>

@@ -3,17 +3,14 @@ import {useState, createContext} from 'react'
 // value to be accessed
 export const CartContext = createContext({
   isOpen: null,
-  products: [],
-  setProducts: () => null,
-  setISOpen: () => null
+  setIsOpen: () => null
 }
 )
 
 export const CartProvider = ({children}) => {
   const[isOpen, setIsOpen] = useState(false);
-  const[products, setProducts] = useState([]);
 
-  const value = {products, setProducts, isOpen, toggleCart}
+  const value = { isOpen, toggleCart}
   // console.log(products);
 
   function toggleCart() {
