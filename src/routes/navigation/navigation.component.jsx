@@ -7,6 +7,8 @@ import {ReactComponent as Logo} from '../../assets/crown.svg';
 import './navigation.styles.scss'
 
 import { signOutUser } from '../../utils/firebase/firebase'
+import ProductCard from '../../components/product-card/product-card.component';
+import CartIcon from '../../components/cart-icon/cart-icon';
 
 export default function Navigation() {
 
@@ -38,9 +40,9 @@ export default function Navigation() {
 
         }
 
+      <CartIcon />
       </div>
     </div>
-
       <Outlet />
       </div>
   )
