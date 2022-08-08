@@ -16,10 +16,20 @@ export const CartProvider = ({children}) => {
 
   function addToCart(id) {
     if (cartItems[`${id}`]){
-      const currentQuantity = cartItems[`${id}`]
-    setCartItems({...cartItems, id:(currentQuantity+1)} )
+    // console.log('BEFORE adding item', JSON.stringify(cartItems));
+    const currentQuantity = cartItems[`${id}`]
+      // console.log("my ID is?", id, currentQuantity);
+    setCartItems(
+      (cartItems) => ({...cartItems, [`${id}`]:(Number([`${currentQuantity}`])+1) })
+    )
+      //`${{...cartItems, id:(currentQuantity+1) }}`)
+    // console.log('after adding item', JSON.stringify(cartItems));
   } else {
-    setCartItems({...cartItems, id:1 } )
+    // console.log(JSON.stringify(cartItems));
+    // console.log("else ID is?", id);
+    setCartItems((cartItems) => ({...cartItems, [`${id}`]:1}))
+    // console.log('hello', JSON.stringify(cartItems));
+
   }
   }
 

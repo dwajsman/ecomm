@@ -11,11 +11,13 @@ import './cart-dropdown.styles.scss'
 
 export default function CartDropdown() {
 
-  const {cartItems} = useContext(CartContext)
+  const {cartItems, setCartItems } = useContext(CartContext)
 
-  console.log('ITEMS', cartItems);
+
+  console.log('ITEMS', JSON.stringify(cartItems));
 
   return (
+
     <div className={`cart-dropdown-container`} >
       <div className='cart-items'>
         {cartItems && 
