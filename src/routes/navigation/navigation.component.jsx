@@ -17,7 +17,7 @@ export default function Navigation() {
   const { isOpen } = useContext(CartContext);
 
 
-  console.log("USER - NAV -> ", currentUser);
+  // console.log("USER - NAV -> ", currentUser);
 
   const signOutHelper = async () => {
     await signOutUser();

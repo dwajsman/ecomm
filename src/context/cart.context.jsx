@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import {useState, createContext} from 'react'
 
+
 // value to be accessed
 export const CartContext = createContext({
   isOpen: null,
@@ -34,7 +35,7 @@ export const CartProvider = ({children}) => {
   }
 
 
-  const value = { isOpen, toggleCart, addToCart}
+  const value = { isOpen, toggleCart, cartItems, addToCart}
   // console.log(products);
 
   // FOR TESTING PURPOSES
@@ -45,6 +46,8 @@ export const CartProvider = ({children}) => {
   // )
 
   function toggleCart() {
+    //log cart items
+    console.log('cart items', cartItems);
     setIsOpen(!isOpen);
   }
 
@@ -54,3 +57,20 @@ export const CartProvider = ({children}) => {
     </CartContext.Provider>
   )
 }
+
+
+// create a context provider for cart items
+// import { useContext } from 'react' 
+// import { CartContext } from '../../context/cart.context'
+//  
+
+// export const CartProvider = ({children}) => {
+//   const[cartItems, setCartItems] = useState({});
+//   const[isOpen, setIsOpen] = useState(false);
+//   const[cartItems, setCartItems] = useState({});
+
+
+//   function addToCart(id) {
+//     if (cartItems[`${id}`]){
+
+
