@@ -46,6 +46,7 @@ export default function Navigation() {
 
         <CartIcon />
       </div>
+      {/* Shortcircuit operator */}
       { isOpen && <CartDropdown /> }
     </div>
       <Outlet />

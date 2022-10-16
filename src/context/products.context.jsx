@@ -13,7 +13,7 @@ export const ProductsContext = createContext({
 export const ProductsProvider = ({children}) => {
   const[products, setProducts] = useState([]);
   const value = {products, setProducts}
-  console.log(products);
+  console.log('product.context.jsx line 16 ',products);
   useEffect(() => {
     setProducts(PRODUCTS)    
   }, [])
